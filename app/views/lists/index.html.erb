@@ -8,10 +8,10 @@
   <% @lists.each do |list| %>
     <% if list.completed %>
       <div class="card ">
-        <div class="card-body bg-secondary">
+        <div class="card-body bg-secondary text-decoration-line-through">
           <%= render list %>
           <button type="button" class="btn btn-primary">
-            <%= link_to "Edit To Do", list %>
+            <%= link_to "Edit To Do", list, class: "text-white link-light" %>
           </button>
         </div>
     </div>
@@ -20,7 +20,7 @@
         <div class="card-body">
           <%= render list %>
           <button type="button" class="btn btn-secondary">
-            <%= link_to "Edit To Do", list %>
+            <%= link_to "Edit To Do", list, class: "text-white link-light" %>
           </button>
         </div>
       </div>
