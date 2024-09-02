@@ -6,10 +6,25 @@
 
 <div id="lists">
   <% @lists.each do |list| %>
-    <%= render list %>
-    <p>
-      <%= link_to "Edit To Do", list %>
-    </p>
+    <% if list.completed %>
+      <div class="card ">
+        <div class="card-body bg-secondary">
+          <%= render list %>
+          <button type="button" class="btn btn-primary">
+            <%= link_to "Edit To Do", list %>
+          </button>
+        </div>
+    </div>
+    <% else %>
+      <div class="card">
+        <div class="card-body">
+          <%= render list %>
+          <button type="button" class="btn btn-secondary">
+            <%= link_to "Edit To Do", list %>
+          </button>
+        </div>
+      </div>
+    <% end %>
   <% end %>
 </div>
 
