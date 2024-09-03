@@ -9,19 +9,21 @@
     <% if list.completed %>
       <div class="card ">
         <div class="card-body bg-secondary text-decoration-line-through">
-          <%= render list %>
-          <button type="button" class="btn btn-primary">
-            <%= link_to "Edit To Do", list, class: "text-white link-light" %>
-          </button>
+          <p>
+            <%= link_to list.description, list, class: "text-dark link-dark" %>
+          </p>
+          <%= button_to "Delete", list, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger text-white link-light" %>
+
         </div>
     </div>
     <% else %>
       <div class="card">
         <div class="card-body">
-          <%= render list %>
-          <button type="button" class="btn btn-secondary">
-            <%= link_to "Edit To Do", list, class: "text-white link-light" %>
-          </button>
+          <p>
+            <%= link_to list.description, list, class: "text-dark link-dark" %>
+          </p>
+          <%= button_to "Delete", list, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger text-white link-light" %>
+
         </div>
       </div>
     <% end %>
