@@ -19,10 +19,14 @@
   </head>
 
   <body>
-    <nav class="navbar bg-dark" data-bs-theme="dark" >
-      <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1" >My To Do's</span>
+    <nav class="navbar bg-dark">
+      <div class="container-fluid m-2">
+        <span class="navbar-brand mb-0 h1 text-white" >My To Do's</span>
+        <div class="d-flex">
+          <%= render "form_index", list: @list %>
+        </div>
       </div>
+
     </nav>
     <div class='container'>
       <%= yield %>

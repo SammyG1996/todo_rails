@@ -2,7 +2,7 @@
 
 <% content_for :title, "Lists" %>
 
-<%= render "form_index", list: @list %>
+
 
 <div id="lists">
   <% @lists.each do |list| %>
@@ -23,11 +23,9 @@
             <%= link_to list.description, list, class: "text-dark link-dark" %>
           </p>
           <%= button_to "Delete", list, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger text-white link-light" %>
-
         </div>
       </div>
     <% end %>
   <% end %>
+  <%= button_to "Delete all marked to do's", home_trash_em_path, method: :get, data: { confirm: 'Are you sure?' }, class: "btn btn-danger mt-3" %>
 </div>
-
-<%= link_to "New To Do", new_list_path %>
