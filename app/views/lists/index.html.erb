@@ -12,8 +12,10 @@
           <p>
             <%= link_to list.description, list, class: "text-dark link-dark" %>
           </p>
-          <%= button_to "Delete", list, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger text-white link-light" %>
-
+          <div class="d-flex">
+            <%= button_to "✓", home_check_marker_path, method: :put,  params: { id: list.id },class: "btn btn-primary text-white link-light" %>
+            <%= button_to "Delete", list , method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger text-white link-light mx-3" %>
+          </div>
         </div>
     </div>
     <% else %>
@@ -22,7 +24,12 @@
           <p>
             <%= link_to list.description, list, class: "text-dark link-dark" %>
           </p>
-          <%= button_to "Delete", list, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger text-white link-light" %>
+          <div class="d-flex">
+            <%= button_to "✓", home_check_marker_path, method: :put,  params: { id: list.id },class: "btn btn-primary text-white link-light" %>
+            <%= button_to "Delete", list , method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger text-white link-light mx-3" %>
+          </div>
+
+
         </div>
       </div>
     <% end %>
