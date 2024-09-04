@@ -13,8 +13,10 @@ class HomeController < ApplicationController
         param_value = params[:id]
         # This gets the to do item from the DB and saved it in the @list param
         @list = List.find(params[:id])
+        # This will reverse whatever the current val of completed is
+        new_completed_value = !@list.completed
         # This will then update the todo to have the "completed" column set to "true"
-        @list.update(completed: true) # or whatever update you need to perform
+        @list.update(completed: new_completed_value) # or whatever update you need to perform
         # Redirects back to lists
         redirect_to lists_path, notice: 'Marker checked.'
     end
